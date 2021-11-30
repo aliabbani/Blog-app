@@ -58,3 +58,8 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
+
+#add for Carriage return character missing
+Style/EndOfLine:
+  EnforcedStyle: lf
+
