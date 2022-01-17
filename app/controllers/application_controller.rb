@@ -6,5 +6,5 @@ end
 # Don't worry about proper authentication at this time. You will add it in the upcoming projects.
 
 def current_user
-    User.first
+  User.first
 end
