@@ -1,16 +1,16 @@
 class Post < ApplicationRecord
-end
+  has_many :comments, foreign_key: 'post_id'
+  has_many :likes, foreign_key: 'post_id'
+  belongs_to :user
 
-# A method that updates the posts counter for a user.
-def update_post_counter
-  User.select.update(:posts_counter).count
-end
+  def recent_5_comments
+    Comments.select('text').joins(:posts).last(5)
+  end
 
-# if we add or delete a post from a user
-# the posts_counter will be updated in the user table
+  private
 
-# A method which returns the 5 most recent comments for a given post.
-def recent_5_comments
-  # Comments.last(5)
-  Comments.select('text').joins(:posts).last(5)
+  def update_post_counter
+    self.update_post_couner = User.select.update(:posts_counter).count
+    save
+  end
 end
