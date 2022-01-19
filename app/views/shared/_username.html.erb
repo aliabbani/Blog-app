@@ -1,0 +1,15 @@
+<h1> render my first partial</h1>
+<div class="container">
+  <div class="user-image">
+    <%= image_tag "user-image.png" , alt: "User's photo" %>
+  </div>
+  <div class="user-body">
+    <% @users.each do |user| %>
+      <div>
+        <h1><%= user.name %></h1>
+        <h3>number of posts: </h3>
+        <span><%= user.posts_counter %></span>
+      </div>
+    <% end %>
+  </div> 
+</div>>
