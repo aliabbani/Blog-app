@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-  has_many :comments, foreign_key: 'post_id'
-  has_many :likes, foreign_key: 'post_id'
+  has_many :comments
+  has_many :likes
   belongs_to :user
 
   def recent_comments

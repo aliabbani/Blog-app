@@ -3,25 +3,21 @@
     <%= render partial: "shared/username", locals: {user: @user} %>
 </div>
 
-<div class="user-id-section-2-bio">
-    <p>Bio</p>
-    <%
-=begin%>
- <p><%= user.bio %></p> 
-<%
-=end%>
-    <p>user.bio</p>
+<div class="user-id-bio">
+  <p>Bio</p>
+  <p> <%= @user.bio %>
 </div>
 
-<div class="user-id-section-3-post">
-    <p>Section 3, post number - description - comment numbers - likes numbers</p>
-    <p>Post</p><span>post.id</span>
-</div>
 <div>
-    <p>Section 4, post number - description - comment numbers - likes numbers</p>
-</div>
-<div>
-    <p>Section 5, post number - description - comment numbers - likes numbers</p>
+<% @user.recent_post.each do |post| %>
+<h4><%= post.title%></h4>
+<p><%= post.text%></p>
+<small>Comments:<%= post.comments_counter%></small>
+<small>Likes<%= post.likes_counter%></small>
+    <% end %>
 </div>
 
+<button>
+<%= link_to "See all posts", user_posts_path(@user) %>
+</button>
 
