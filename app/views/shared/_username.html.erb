@@ -3,13 +3,9 @@
   <div class="user-image">
     <%= image_tag "user-image.png" , alt: "User's photo" %>
   </div>
-  <div class="user-body">
-    <% @users.each do |user| %>
-      <div>
+  <div>
         <h1><%= user.name %></h1>
         <h3>number of posts: </h3>
         <span><%= user.posts_counter %></span>
-      </div>
-    <% end %>
-  </div> 
-</div>>
+      </div> 
+</div>

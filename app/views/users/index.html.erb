@@ -1,4 +1,21 @@
 <h1>Users</h1>
 <div>
-<%= render partial: "shared/username", locals: {user: @user} %>
+<%
+=begin%>
+ <%= render partial: "shared/username", locals: {user: @user} %> 
+<%
+=end%>
+
 </div>
+  <div class="user-card">
+    <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do %>
+      <%= image_tag "user-image.png" , alt: "User's photo" %>
+      <div class="user-body">
+        <h1><%= user.name %></h1>
+        <h3>number of posts: </h3>
+        <span><%= user.posts_counter %></span>
+      </div>
+    <% end %>
+    <% end %>
+  </div> 

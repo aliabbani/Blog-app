@@ -1,12 +1,21 @@
 <h1>Here is the page for a specific user</h1>
-<div>
-    <p>Section 1, user image - user name - number of post</p>
+<div class="user-id-section-1">
+    <%= render partial: "shared/username", locals: {user: @user} %>
 </div>
-<div>
-    <p>Section 2, bio with description</p>
+
+<div class="user-id-section-2-bio">
+    <p>Bio</p>
+    <%
+=begin%>
+ <p><%= user.bio %></p> 
+<%
+=end%>
+    <p>user.bio</p>
 </div>
-<div>
+
+<div class="user-id-section-3-post">
     <p>Section 3, post number - description - comment numbers - likes numbers</p>
+    <p>Post</p><span>post.id</span>
 </div>
 <div>
     <p>Section 4, post number - description - comment numbers - likes numbers</p>
