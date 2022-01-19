@@ -1,0 +1,8 @@
+<div class="post_cards">
+<% @user.recent_post.each do |post| %>
+<h4><%= post.title%></h4>
+<p><%= post.text%></p>
+<small>Comments:<%= post.comments_counter%></small>
+<small>Likes<%= post.likes_counter%></small>
+    <% end %>
+</div>

@@ -1,6 +1,6 @@
 <h1>Here is the page for a specific user</h1>
-<div class="user-id-section-1">
-    <%= render partial: "shared/username", locals: {user: @user} %>
+<div class="user-repeat">
+    <%= render partial: "shared/username", locals: { user: @user } %>
 </div>
 
 <div class="user-id-bio">
@@ -8,16 +8,18 @@
   <p> <%= @user.bio %>
 </div>
 
-<div>
 <% @user.recent_post.each do |post| %>
-<h4><%= post.title%></h4>
-<p><%= post.text%></p>
-<small>Comments:<%= post.comments_counter%></small>
-<small>Likes<%= post.likes_counter%></small>
-    <% end %>
+
+<h4><%= link_to post.title, user_post_path(post) %></h4>
+<p><%= post.text %></p>
+<div>
+<span>Comments: <%= post.comments_counter%>,</span> 
+<span>Likes: <%= post.likes_counter%></span>
 </div>
 
+<% end %>
+
 <button>
-<%= link_to "See all posts", user_posts_path(@user) %>
+<%= link_to "See all posts", "/users/1/posts" %>
 </button>
 

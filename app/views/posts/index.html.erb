@@ -1,21 +1,25 @@
 <h1>Here is the posts for a specific user</h1>
-<div>
-    <p>Section 1, user image - user name - number of post</p>
+
+<div class="user-repeat">
+    <%= render partial: "shared/username", locals: { user: @user } %>
 </div>
-<div>
-    <p>Section 2, post number - description - comment numbers - likes numbers</p>
+
+<div class="post_cards">
+    <% @user.recent_post.each do |post| %>
+        <h4><%= post.title%></h4>
+        <p><%= post.text%></p>
+        <small>Comments:<%= post.comments_counter%></small>
+        <small>Likes<%= post.likes_counter%></small>
+    
+        <% post.recent_comments.each do |comment| %>
+        <p><%= comment.user.name %>: <%= comment.text %></p> 
+        <% end %>
+    
+    <% end %>
 </div>
-<div>
-    <p>Section 3, username - comment number</p>
-</div>
-<div>
-    <p>Section 4, post number - description - comment numbers - likes numbers</p>
-</div>
-<div>
-    <p>Section 5, username - comment number</p>
-</div>
-<div>
-<button>submit button</button>
-</div>
+
+
+
+
 
 
