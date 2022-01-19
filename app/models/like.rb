@@ -5,9 +5,7 @@ class Like < ApplicationRecord
   private
 
   def update_likes_counter
-    self.update_likes_couner = Post.select.update(:likes_counter).count
+    self.update_counter_likes = Post.select.update(:likes_counter)
     save
   end
 end
-
-# A method that updates the likes counter for a post.

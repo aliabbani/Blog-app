@@ -1,2 +1,11 @@
 <h1>users</h1>
+<div>
+    <% @users.each do |user| %>
+      <div>
+        <h1><%= user.name %></h1>
+        <h3>number of posts: </h3>
+        <span><%= user.posts_counter %></span>
+      </div>
+    <% end %>
+  </div>
 

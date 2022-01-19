@@ -5,9 +5,7 @@ class Comment < ApplicationRecord
   private
 
   def update_comments_counter
-    self.update_comments_couner = Post.select.update(:comments_counter).count
+    self.update_counter_comments = Post.select.update(:comments_counter)
     save
   end
 end
-
-# A method that updates the comments counter for a post.
