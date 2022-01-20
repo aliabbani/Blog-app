@@ -1,7 +1,14 @@
 <h1>Here is the page for a specific post</h1>
-<div>
-    <p>Section 1, post number - comment numbers - likes numbers - description</p>
+
+<div class="post_cards">
+    <h4><%= @post.title%></h4>
+    <small>Comments:<%= @post.comments_counter%></small>
+    <small>Likes<%= @post.likes_counter%></small>
+    <p><%= @post.text%></p>
 </div>
+
 <div>
-    <p>Section 2, username - comment number</p>
+    <% @post.comments.each do |comment| %>
+    <p><%= comment.user.name %>: <%= comment.text %></p> 
+    <% end %>
 </div>

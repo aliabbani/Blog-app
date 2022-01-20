@@ -2,12 +2,11 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
 
+  after_save :update_comments_counter
+
   private
 
   def update_comments_counter
-    self.update_comments_couner = Post.select.update(:comments_counter).count
-    save
+    post.increment!(:comments_counter)
   end
 end
-
-# A method that updates the comments counter for a post.
