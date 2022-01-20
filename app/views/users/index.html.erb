@@ -1,4 +1,10 @@
 <h1>Users</h1>
-
-
-<%= render @users %>
+<div class="user-card">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do %>
+      <div class="user-repeat">
+        <%= render partial: "shared/username", locals: { user: user } %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
