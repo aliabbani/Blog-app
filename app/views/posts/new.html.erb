@@ -1,26 +1,18 @@
 <h1>New Post</h1>
 
-<%= form_with model: post, url: user_posts_path, method: :post, local: true, scope: :post do %>
+<%= form_with model: post, url: user_posts_path, method: :post, local: true, scope: :post do |f| %>
 
-  <div>
-     :question<br>
-    :question %>
+  <div class="form-post-label">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </div>
 
-  <div>
-    :answer %><br>
-    :answer %>
+  <div class="form-post-label">
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
   </div>
-
-  <div>
-    :distractor_1 %><br>
-    :distractor_1 %>
+  
+  <div class="form-post-submit">
+    <%= f.submit "Add Post" %>
   </div>
-
-  <div>
-    :distractor_2 %><br>
-    :distractor_2 %>
-  </div>
-
-   "Add Question" %>
 <% end %>

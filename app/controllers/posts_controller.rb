@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def create
     # new object from params
-    post = Post.new(params.require(:post).permit(:question, :answer, :distractor_1, :distractor_2))
+    post = Post.new(params.require(:post).permit(:title, :text))
     # respond_to block
     respond_to do |format|
         format.html do
