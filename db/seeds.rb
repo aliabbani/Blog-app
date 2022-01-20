@@ -8,6 +8,9 @@
 
 wendy = User.create!(name: 'Wendy', photo: 'image2' , bio: 'lorem40', posts_counter: 0)
 john = User.create!(name: 'John', photo: 'image3', bio: 'lorem40', posts_counter: 0)
+dipesh = User.create!(name: 'Dipesh', photo: 'image3' , bio: 'lorem40', posts_counter: 0)
+abbani = User.create!(name: 'Abbani', photo: 'image4', bio: 'lorem40', posts_counter: 0)
+
 
 post1 = wendy.posts.create!(title: 'Cats and Dogs', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0)
 post2 = john.posts.create!(title: 'Never ending fun', text: 'this is second post but I don\'t think I should create another post again', comments_counter: 0, likes_counter: 0)
