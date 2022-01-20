@@ -6,17 +6,23 @@
 
 <div class="post_cards">
     <% @user.recent_post.each do |post| %>
-        <h4><%= post.title%></h4>
+        <h4><%= link_to post.title, "/users/1/posts/1" %></h4>
         <p><%= post.text%></p>
-        <small>Comments:<%= post.comments_counter%></small>
-        <small>Likes<%= post.likes_counter%></small>
-    
-        <% post.recent_comments.each do |comment| %>
-        <p><%= comment.user.name %>: <%= comment.text %></p> 
-        <% end %>
-    
+        <div>
+            <span>Comments:<%= post.comments_counter%></span>
+            <span>Likes<%= post.likes_counter%></span>
+        <div>
+        <div>
+            <% post.recent_comments.each do |comment| %>
+                <p><%= comment.user.name %>: <%= comment.text %></p> 
+            <% end %>
+        </div>
     <% end %>
 </div>
+
+<button>
+    <%= link_to "Pagination",  user_posts_path(@user) %>
+</button>
 
 
 
