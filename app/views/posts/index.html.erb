@@ -6,7 +6,7 @@
 
 <div class="post_cards">
     <% @user.recent_post.each do |post| %>
-        <h4><%= link_to post.title, "/users/1/posts/1" %></h4>
+        <h4><%= link_to post.title, user_posts_path %></h4>
         <p><%= post.text%></p>
         <div>
             <span>Comments:<%= post.comments_counter%></span>
@@ -21,7 +21,7 @@
 </div>
 
 <button>
-    <%= link_to 'Create New Post', "posts/new" %>
+    <%= link_to 'Create New Post', new_user_post_path %>
 </button>
 
 <button>

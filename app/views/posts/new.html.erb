@@ -1,18 +1,23 @@
-<h1>New Post</h1>
+<h1>Create New Post</h1>
 
-<%= form_with model: post, url: user_posts_path, method: :post, local: true, scope: :post do |f| %>
+<%= form_with model: post, url: user_posts_path, method: :post, local: true, scope: :post do |form| %>
 
   <div class="form-post-label">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
   </div>
 
   <div class="form-post-label">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
+    <%= form.text_area :text, size: "70x5" %><br>
   </div>
   
   <div class="form-post-submit">
-    <%= f.submit "Add Post" %>
+    <%= form.submit "Add Post", data: {disable_with: "Loading..."}%>
   </div>
+
 <% end %>
+  <div>
+    <button>
+        <%=link_to 'Back', root_path %>
+    </button>
+</div>
