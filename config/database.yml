@@ -15,4 +15,4 @@ test:
   database: your_db_test
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>Q

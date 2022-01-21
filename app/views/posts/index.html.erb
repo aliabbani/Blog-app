@@ -17,12 +17,12 @@
                 <p><%= comment.user.name %>: <%= comment.text %></p> 
             <% end %>
         </div>
+        <button>
+            <%= link_to 'Create New Post', new_user_post_path  %>
+        </button>
     <% end %>
 </div>
 
-<button>
-    <%= link_to 'Create New Post', new_user_post_path %>
-</button>
 
 <button>
     <%= link_to "Pagination",  user_posts_path(@user) %>
