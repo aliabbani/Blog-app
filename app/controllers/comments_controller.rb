@@ -1,24 +1,30 @@
 class CommentsController < ApplicationController
-  def new
-    @comment = Comment.new
-  end
+  # def new
+  #   @comment = Comment.new
+  # end
 
   def create
-    @post = Post.find(params[:id]) posts/id
-    @comment = Comment.new(params.require(:comment).permit(:text))
-    @comment.user_id = current_user.id
-    @comment.post_id = @post.id
+    # @post = Post.find(params[:id]) 
+    # @comment = Comment.create(params.require(:comment).permit(:text))
+    # @comment.post_id = @post.id 
+    # @comment.user_id = current_user.id
     
+    @post = Post.find(params[:id]) 
+    @comment = @post.comments.create(:text, user_id: current_user.id, post_id: @post.id)
     respond_to do |format|
       format.html do
         if @comment.save
-          flash[:success] = "Question saved successfully"
-          redirect_to user_post_path
+          redirect_to user_post_path(@post.user_id, @post.id)
         else
-          flash.now[:error] = "Error: Question could not be saved"
-          render :new 
+          redirect_to user_post_path(@post.user_id, @post.id)
         end
       end
     end
+  end
+
+  private
+
+  def comment_parameters
+    params.require(:comment).permit(:text)
   end
 end
