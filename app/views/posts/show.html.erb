@@ -1,14 +1,22 @@
-<h1>Here is the page for a specific post</h1>
+<h1 class="topic">Specific user's posts</h1>
 
-<div class="post_cards">
-    <h4><%= @post.title%></h4>
-    <small>Comments:<%= @post.comments_counter%></small>
-    <small>Likes<%= @post.likes_counter%></small>
-    <p><%= @post.text%></p>
+<div class="card">
+    <div class="card-body">
+    <div class="post-show-line">
+        <h5 class="card-title"><%= @post.title %></h5>
+        <p class="card-text">Comments: <small class="text-muted"><%= @post.comments_counter%></small>, Likes: <small class="text-muted"><%= @post.likes_counter%></small></p>
+    </div>
+        <p class="card-text"><%= @post.text%></p>
+    </div>
 </div>
 
-<div>
-    <% @post.comments.each do |comment| %>
-    <p><%= comment.author.name %>: <%= comment.text %></p> 
-    <% end %>
+<div class="card">
+    <div class="card-body">
+        <% @post.comments.each do |comment| %>
+        <p><%= comment.author.name %>: <%= comment.text %></p> 
+        <% end %>
+    </div>
 </div>
+
+
+

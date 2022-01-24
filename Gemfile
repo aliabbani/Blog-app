@@ -59,3 +59,9 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'pry'
 gem 'rails-controller-testing'
 gem 'rspec-rails', group: %i[development test]
+
+#bootstrap
+gem 'bootstrap', '~> 5.1.3'
+
+# this is also for bootstrap
+gem 'jquery-rails'

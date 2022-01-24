@@ -1,28 +1,28 @@
-<h1>Here is the page for a specific user</h1>
-<div class="user-repeat">
-  <%= render partial: "shared/username", locals: { user: @user } %>
+<h2 class="topic">Specific user</h2>
+<%= render partial: "shared/username", locals: { user: @user } %>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Bio</h5>
+    <p class="card-text"><%= @user.bio %></p>
+  </div>
 </div>
 
-<div class="user-id-bio">
-  <p>Bio</p>
-  <p> <%= @user.bio %>
+<div class="card">
+    <% @user.recent_post.each do |post| %>
+      <div class="card-body">
+        <h5 class="card-title"><%= post.title %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= post.text %></h6>
+        <p class="card-text">Comments: <small class="text-muted"><%= post.comments_counter%></small>, Likes: <small class="text-muted"><%= post.likes_counter%></small></p>
+      </div>
+    <% end %>
 </div>
 
-<div>
-  <% @user.recent_post.each do |post| %>
-    <%
-=begin%>
- <h4><%= link_to post.title, user_post_path(post) %></h4> 
-<%
-=end%>
-    <p><%= post.text %></p>
-    <div>
-      <span>Comments: <%= post.comments_counter%>,</span> 
-      <span>Likes: <%= post.likes_counter%></span>
-    </div>
-  <% end %>
+<div class="centro-user-show-button">
+  <a>
+    <%= link_to "See all posts", user_posts_path(@user), :class => "btn btn-primary" %>
+  </a>
 </div>
 
-<button>
-  <%= link_to "See all posts", user_posts_path(@user) %>
-</button>
+
+

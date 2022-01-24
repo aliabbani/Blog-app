@@ -1,29 +1,38 @@
-<h1>Here is the posts for a specific user</h1>
+<h1 class="topic">Specific user's posts</h1>
 
 <div class="user-repeat">
     <%= render partial: "shared/username", locals: { user: @user } %>
 </div>
 
-<div class="post_cards">
-    <% @user.recent_post.each do |post| %>
-        <h4><%= link_to post.title, user_post_path(@user, post.id) %></h4>
-        <p><%= post.text%></p>
-        <div>
-            <span>Comments:<%= post.comments_counter%></span>
-            <span>Likes<%= post.likes_counter%></span>
-        <div>
-        <div>
-            <% post.recent_comments.each do |comment| %>
-                <p><%= comment.author.name %>: <%= comment.text %></p> 
-            <% end %>
+<% @user.recent_post.each do |post| %>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><%= link_to post.title, user_post_path(@user, post.id) %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= post.text %></h6>
+            <p class="card-text">Comments: <small class="text-muted"><%= post.comments_counter%></small>, Likes: <small class="text-muted"><%= post.likes_counter%></small></p>
         </div>
-    <% end %>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+        <% post.recent_comments.each do |comment| %>
+            <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
+        <% end %>
+        </div>
+    </div>
+<% end %>
+
+<div class="centro-post-index-button">
+    <a>
+        <%= link_to 'Create New Post', new_user_post_path, :class => "btn btn-primary"  %>
+    </a>
 </div>
 
-<button>
-    <%= link_to 'Create New Post', new_user_post_path  %>
-</button>
+<%
+=begin%>
+ <a>
+<%= link_to "Pagination",  user_posts_path(@user), :class => "btn btn-primary" %>
+</a>  
+<%
+=end%>
 
-<button>
-    <%= link_to "Pagination",  user_posts_path(@user) %>
-</button>
