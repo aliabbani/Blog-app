@@ -8,15 +8,19 @@
   </div>
 </div>
 
-<div class="card">
-    <% @user.recent_post.each do |post| %>
-      <div class="card-body">
+<% @user.recent_post.each do |post| %>
+  <div class="card">
+    <div class="card-body">
+      <div class="left">
         <h5 class="card-title"><%= post.title %></h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= post.text %></h6>
+      </div>
+      <div class="right">
         <p class="card-text">Comments: <small class="text-muted"><%= post.comments_counter%></small>, Likes: <small class="text-muted"><%= post.likes_counter%></small></p>
       </div>
-    <% end %>
-</div>
+    </div>
+  </div>
+<% end %>
 
 <div class="centro-user-show-button">
   <a>
