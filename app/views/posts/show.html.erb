@@ -9,6 +9,6 @@
 
 <div>
     <% @post.comments.each do |comment| %>
-    <p><%= comment.user.name %>: <%= comment.text %></p> 
+    <p><%= comment.author.name %>: <%= comment.text %></p> 
     <% end %>
 </div>
