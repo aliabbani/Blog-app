@@ -60,7 +60,7 @@ gem 'pry'
 gem 'rails-controller-testing'
 gem 'rspec-rails', group: %i[development test]
 
-#bootstrap
+# bootstrap
 gem 'bootstrap', '~> 5.1.3'
 
 # this is also for bootstrap
