@@ -10,7 +10,11 @@
 
 <div>
   <% @user.recent_post.each do |post| %>
-    <h4><%= link_to post.title, user_post_path(post) %></h4>
+    <%
+=begin%>
+ <h4><%= link_to post.title, user_post_path(post) %></h4> 
+<%
+=end%>
     <p><%= post.text %></p>
     <div>
       <span>Comments: <%= post.comments_counter%>,</span> 
@@ -22,4 +26,3 @@
 <button>
   <%= link_to "See all posts", user_posts_path(@user) %>
 </button>
-

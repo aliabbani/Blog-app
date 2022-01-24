@@ -1,0 +1,18 @@
+<div>
+  <h2>Create Post</h2>
+    <%= form_with model: @post, url: user_posts_path, method: :post, scope: :post do |form| %>
+    <div >
+      <%= form.label :title, "Your Title" %>
+      <%= form.text_field :title, placeholder: "Title", required: true %>
+    </div>
+
+    <div >
+      <%= form.text_area :text, size: "100x20", placeholder: "Post", required: true %>
+    </div>
+
+    <div>
+      <%= form.submit "Create", disable_with: "Please wait..." %>
+    </div>
+
+  <% end %>
+</div>
