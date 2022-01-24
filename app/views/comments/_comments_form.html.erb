@@ -1,5 +1,5 @@
 <h2>Add your comment</h2>
- <%= form_with model: @post, url: user_posts_path, method: :post, local: true do |form| %>
+ <%= form_with model: @post, method: :post, local: true do |form| %>
    <%= form.text_area :text, placeholder: 'Your comment' %><br><br>
   <%= form.submit 'Post Comment' %><br><br>
 <% end %>
