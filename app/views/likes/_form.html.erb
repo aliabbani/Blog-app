@@ -1,0 +1,3 @@
+<%= form_with model:[@post, @post.likes.build], method: :post, local: true do |form| %>
+  <%= form.submit "Like this post", class: "btn btn-danger"%>
+<% end %>
