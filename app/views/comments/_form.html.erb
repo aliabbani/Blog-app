@@ -1,0 +1,9 @@
+<%= form_with do |form| %>
+    <div >
+      <%= form.text_area :text, size: "80x4", placeholder: "Type your comment", required: true %>
+    </div>
+
+    <div>
+      <%= form.submit "Reply", class: "btn btn-primary", disable_with: "Please wait..." %>
+    </div>
+<% end %>
