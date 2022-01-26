@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   end
 
   resources :posts do
-    resources :comments, only: [:new, :create]
-    resources :likes, only: [:new, :create]
+    resources :comments, only: [:create]
+    resources :likes, only: [:create]
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

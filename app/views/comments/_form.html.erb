@@ -1,4 +1,4 @@
-<%= form_with do |form| %>
+<%= form_with model:[@post, @post.comments.build], method: :post, local: true do |form| %>
     <div >
       <%= form.text_area :text, size: "80x4", placeholder: "Type your comment", required: true %>
     </div>
