@@ -20,10 +20,10 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if @post.save!
-          flash[:success] = 'Question saved successfully'
+          flash[:success] = 'You have successfully created a post.'
           redirect_to user_posts_url
         else
-          flash.now[:error] = 'Error: Question could not be saved'
+          flash.now[:error] = 'Error: Post could not be saved'
           render :new
         end
       end
