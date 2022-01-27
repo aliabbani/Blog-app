@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     # 1 = 1
     respond_to do |format|
       format.html do
-        if @post.save
+        if @post.save!
           flash[:success] = 'Question saved successfully'
           redirect_to user_posts_url
         else

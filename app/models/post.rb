@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
   has_many :comments
   has_many :likes
+  validates :name, presence: true
 
   def recent_comments
     comments.order('created_at Desc').limit(5)
