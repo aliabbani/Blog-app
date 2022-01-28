@@ -15,7 +15,7 @@
 
   <div class="card">
     <div class="card-body">
-      <% post.recent_comments.each do |comment| %>
+      <% post.recent_comments.includes(:author).each do |comment| %>
         <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
       <% end %>
     </div>

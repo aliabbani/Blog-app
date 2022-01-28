@@ -14,12 +14,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.author_id = current_user.id
+    @post = current_user.posts.new(post_params)
+    # @post.author_id = current_user.id
+    @post.comments_counter = 0
+    @post.likes_counter = 0
     # 1 = 1
     respond_to do |format|
       format.html do
-        if @post.save!
+        if @post.save
           flash[:success] = 'You have successfully created a post.'
           redirect_to user_posts_url
         else
