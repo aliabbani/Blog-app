@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'post validation tests' do
-
-    subject do 
-      ali = User.new(name: "Ali Abbani", photo: "home photo", bio: "ali's bio", posts_counter: 0)
-      Post.new(title: "good title", text: "texttexttext", comments_counter: 2, likes_counter: 2, author_id: ali.id) 
+    subject do
+      ali = User.new(name: 'Ali Abbani', photo: 'home photo', bio: "ali's bio", posts_counter: 0)
+      Post.new(title: 'good title', text: 'texttexttext', comments_counter: 2, likes_counter: 2, author_id: ali.id)
     end
 
     before { subject.save }

@@ -2,13 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   describe 'comment validation tests' do
-
-    subject { like = Like.new(author_id: 2, post_id: 2) }
+    subject { Like.new(author_id: 2, post_id: 2) }
 
     before { subject.save }
 
     it 'author_id should be integer ' do
-      subject.author_id = "ali"
+      subject.author_id = 'ali'
       expect(subject).to_not be_valid
     end
 
@@ -18,7 +17,7 @@ RSpec.describe Like, type: :model do
     end
 
     it 'post_id should be integer' do
-      subject.post_id = "ali"
+      subject.post_id = 'ali'
       expect(subject).to_not be_valid
     end
 

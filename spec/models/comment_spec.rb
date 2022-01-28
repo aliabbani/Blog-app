@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   describe 'comment validation tests' do
-
-    subject { comment = Comment.new(text: "creation of comment", author_id: 2, post_id: 2) }
+    subject { Comment.new(text: 'creation of comment', author_id: 2, post_id: 2) }
 
     before { subject.save }
 
@@ -13,7 +12,7 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'author_id should be integer' do
-      subject.author_id = "ali"
+      subject.author_id = 'ali'
       expect(subject).to_not be_valid
     end
 
@@ -23,7 +22,7 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'post_id should be integer' do
-      subject.post_id = "ali"
+      subject.post_id = 'ali'
       expect(subject).to_not be_valid
     end
 

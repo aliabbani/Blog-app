@@ -66,5 +66,5 @@ gem 'bootstrap', '~> 5.1.3'
 # this is also for bootstrap
 gem 'jquery-rails'
 
-# bullet gem for n +1 
+# bullet gem for n +1
 gem 'bullet', group: 'development'

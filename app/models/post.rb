@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :likes
 
   validates :title, presence: true
-  validates :title, length: { maximum: 250, too_long: "%{count} characters is the maximum allowed" }
+  validates :title, length: { maximum: 250 }
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
