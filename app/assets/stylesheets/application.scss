@@ -33,3 +33,36 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.block_form {
+  width: 90%;
+  min-height: 20px;
+  margin: auto;
+}
+
+.block_form form input {
+  width: 98%;
+  height: 30px;
+  padding: 8px;
+}
+
+.block_form form .field {
+  margin-top: 30px;
+}
+
+.block_form form input[type=submit] {
+  box-shadow: 8px 8px 5px #000;
+  background-color: white;
+  line-height: 10px;
+  border: 1px solid #000;
+  margin-bottom: 12px;
+}
+
+.block_form form input[type=checkbox] {
+  width: 20px !important;
+  margin: 0 !important;
+}
+
+.block_form form input[type=password] {
+  margin-bottom: 10px !important;
+}
