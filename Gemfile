@@ -68,3 +68,6 @@ gem 'jquery-rails'
 
 # bullet gem for n +1
 gem 'bullet', group: 'development'
+
+# device gem for login
+gem 'devise'
