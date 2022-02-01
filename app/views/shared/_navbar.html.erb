@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+  <h3>ChitChat</h3>
+  <% if user_signed_in? %>
+    <%= link_to "Home", root_path, class: "justify-content-center align-self-center" %>
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "justify-content-center align-self-center btn btn-primary" %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path, class: "justify-content-center align-self-center" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "justify-content-center align-self-center" %>
+  <% end %>
+</nav>
