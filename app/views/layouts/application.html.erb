@@ -11,12 +11,9 @@
   </head>
 
   <body>
-    <h1 class="logo">ChitChat</h1>
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <%= render partial: "shared/navbar" %>  
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
