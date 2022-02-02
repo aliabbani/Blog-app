@@ -1,9 +1,7 @@
 class CommentsController < ApplicationController
-  def index
-  end
+  def index; end
 
-  def show
-  end
+  def show; end
 
   def new
     @comment = Comment.new
@@ -27,7 +25,7 @@ class CommentsController < ApplicationController
   # def destroy
   #   # @post = Post.find(params[:post_id])
   #   @comments = Comment.find(params[:comment_id])
-  #   @posts = @comments.post 
+  #   @posts = @comments.post
   #   @comments.destroy
   #   flash[:alert] = 'Deleted user\'s comment'
   #   redirect_back fallback_location: [post.user, post]
@@ -39,7 +37,7 @@ class CommentsController < ApplicationController
     @comment.destroy!
     flash[:success] = 'Removed comment!'
     redirect_to user_post_path(@post.author.id, @post.id)
-end
+  end
 
   private
 
