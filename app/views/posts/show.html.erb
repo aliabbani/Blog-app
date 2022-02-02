@@ -15,7 +15,7 @@
     <% @post.comments.includes(:author).each do |comment| %>
     <p><%= comment.author.name %>: <%= comment.text %></p> 
      <%if can? :destroy, @comment %>
-        <%= button_to 'Delete Comment', user_post_path(@user.id, post), method: :delete, :class => "btn btn-primary"  %>
+        <%= button_to 'Delete Comment', user_post_path(@post.author.id, @post.id), method: :delete, :class => "btn btn-primary" %>
       <% end %>
     <% end %>
   </div>
