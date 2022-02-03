@@ -2,10 +2,7 @@ class Ability
   include CanCan::Ability
   def initialize(user)
     # Define abilities for the passed in user here. For example:
-    can :read, Post
-    can :read, Comment
-    can :read, User
-    can :read, Like
+    can :read, :all
     return unless user.present?
 
     can :manage, Post, author_id: user.id

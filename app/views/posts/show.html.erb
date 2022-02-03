@@ -14,7 +14,7 @@
   <div class="card-body">
     <% @post.comments.includes(:author).each do |comment| %>
     <p><%= comment.author.name %>: <%= comment.text %></p> 
-     <%if can? :destroy, @comment %>
+      <% if can? :destroy, comment %>
         <%= button_to 'Delete Comment', destroy_comment_path(comment.id), method: :delete, :class => "btn btn-primary" %>
       <% end %>
     <% end %>
