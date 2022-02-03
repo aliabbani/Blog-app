@@ -68,17 +68,17 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.before(:suite) do
-    DatabaseCleaner.clean_with(:truncation)
-  end
+  # config.before(:suite) do
+  #   DatabaseCleaner.clean_with(:truncation)
+  # end
 
-  config.before(:each) do
-    DatabaseCleaner.strategy = :transaction
-  end
+  # config.before(:each) do
+  #   DatabaseCleaner.strategy = :transaction
+  # end
 
-  config.before(:each, js: true) do
-    DatabaseCleaner.strategy = :truncation
-  end
+  # config.before(:each, js: true) do
+  #   DatabaseCleaner.strategy = :truncation
+  # end
 
   # This block must be here, do not combine with the other `before(:each)` block.
   # This makes it so Capybara can see the database.
@@ -86,9 +86,9 @@ RSpec.configure do |config|
     DatabaseCleaner.start
   end
 
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
+  # config.after(:each) do
+  #   DatabaseCleaner.clean
+  # end
 
   # Capybara.default_driver = :selenium_chrome
 end
