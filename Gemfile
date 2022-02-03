@@ -71,3 +71,6 @@ gem 'bullet', group: 'development'
 
 # device gem for login
 gem 'devise'
+
+# cancancan for authorization
+gem 'cancancan'

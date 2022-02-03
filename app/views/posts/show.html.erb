@@ -4,7 +4,7 @@
   <div class="card-body">
     <div class="post-show-line">
       <h5 class="card-title"><%= @post.title %></h5>
-      <p class="card-text">Comments: <small class="text-muted"><%= @post.comments_counter%></small>, Likes: <small class="text-muted"><%= @post.likes_counter%></small></p>
+      <p class="card-text">Comments: <small class="text-muted"><%= @post.comments.length%></small>, Likes: <small class="text-muted"><%= @post.likes_counter%></small></p>
     </div>
     <p class="card-text"><%= @post.text%></p>
   </div>
@@ -14,6 +14,9 @@
   <div class="card-body">
     <% @post.comments.includes(:author).each do |comment| %>
     <p><%= comment.author.name %>: <%= comment.text %></p> 
+      <% if can? :destroy, comment %>
+        <%= button_to 'Delete Comment', destroy_comment_path(comment.id), method: :delete, :class => "btn btn-primary" %>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -1,4 +1,10 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
+  def index; end
+
+  def show; end
+
   def new
     @comment = Comment.new
   end
@@ -18,9 +24,27 @@ class CommentsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   # @post = Post.find(params[:post_id])
+  #   @comments = Comment.find(params[:comment_id])
+  #   @posts = @comments.post
+  #   @comments.destroy
+  #   flash[:alert] = 'Deleted user\'s comment'
+  #   redirect_back fallback_location: [post.user, post]
+  # end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    @comment.destroy!
+    flash[:success] = 'Removed comment!'
+    redirect_to user_post_path(@post.author.id, @post.id)
+  end
+
   private
 
   def comment_params
     params.require(:comment).permit(:text)
   end
 end
+# redirect_to user_post_path(@post.author.id, @post.id)
