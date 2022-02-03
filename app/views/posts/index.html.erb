@@ -10,8 +10,8 @@
       <h5 class="card-title"><%= link_to post.title, user_post_path(@user, post.id) %></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= post.text %></h6>
       <p class="card-text">Comments: <small class="text-muted"><%= post.comments.length%></small>, Likes: <small class="text-muted"><%= post.likes_counter%></small></p>
-      <%if can? :destroy, @post %>
-        <%= button_to 'Delete Post', user_post_path(@user.id, post), method: :delete, :class => "btn btn-primary"  %>
+      <%if can? :destroy, post %>
+        <%= button_to 'Delete Post', user_post_path(@user, post), method: :delete, class: 'delete btn btn-primary text-end' %>
       <% end %>
     </div>
   </div>
