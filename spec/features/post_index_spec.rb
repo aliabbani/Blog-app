@@ -21,7 +21,6 @@ RSpec.describe 'On Post Index Page', type: :feature do
       title: 'Three', text: 'this is first post about cats and dogs!', comments_counter: 0, likes_counter: 0
     )
 
-    # Comments
     lucy = User.create!(
       name: 'lucy', bio: 'this is my bio',
       photo: 'test_image1', email: 'lucy@gmail.com',
@@ -71,10 +70,6 @@ RSpec.describe 'On Post Index Page', type: :feature do
       puts(first_post.inspect)
       expect(page).to have_content 'Likes:'
     end
-
-    # it 'a section for pagination if there are more posts than fit on the view.' do
-    #   expect(page).to have_button 'More Posts'
-    # end
 
     it 'when I click on a post, it redirects me to that post\'s show page.' do
       click_link 'Cats and Dogs'
