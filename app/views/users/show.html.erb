@@ -12,7 +12,9 @@
   <div class="card">
     <div class="card-body">
       <div class="left">
-        <h5 class="card-title"><%= post.title %></h5>
+        <%= link_to user_post_path(@user) do %>
+          <h5 class="card-title"><%= post.title %></h5>
+        <% end %>
         <h6 class="card-subtitle mb-2 text-muted"><%= post.text %></h6>
       </div>
       <div class="right">
