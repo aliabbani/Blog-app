@@ -3,6 +3,7 @@
 <div class="card">
   <div class="card-body">
     <div class="post-show-line">
+      <h3 class="card-title"><%= @user.name %></h3>
       <h5 class="card-title"><%= @post.title %></h5>
       <p class="card-text">Comments: <small class="text-muted"><%= @post.comments.length%></small>, Likes: <small class="text-muted"><%= @post.likes_counter%></small></p>
     </div>
