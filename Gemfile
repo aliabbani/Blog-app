@@ -75,3 +75,6 @@ gem 'devise'
 
 # cancancan for authorization
 gem 'cancancan'
+
+# jwt
+gem 'devise-jwt'
