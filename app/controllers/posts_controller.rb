@@ -2,9 +2,10 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments)
-    render json: @post
+    # @user = User.find(params[:user_id])
+    # @posts = @user.posts.includes(:comments)
+    @posts = Post.all
+    render json: @posts
   end
 
   def show

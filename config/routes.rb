@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :posts
   end
-  resources :posts do
+  resources :posts, defaults: { format: :json } do 
     resources :comments, only: [:new, :create, :show]
     resources :likes, only: [:create, :destroy]
   end
