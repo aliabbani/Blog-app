@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(text: comment_params[:text], author_id: current_user.id, post_id: @post.id)
     if @comment.save!
-      render json: { 'success' => 'You have successfully created a comment'}, status: :created
+      render json: { 'success' => 'You have successfully created a comment' }, status: :created
     else
       render json: { 'error' => 'Error :Comment could not be saved' }, status: 'Bad'
     end

@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post.comments_counter = 0
     @post.likes_counter = 0
     if @post.save
-      render json: { 'success' => 'You have successfully created a post'}, status: :created
+      render json: { 'success' => 'You have successfully created a post' }, status: :created
     else
       render json: { 'error' => 'Error :Post could not be saved' }, status: 'Bad'
     end

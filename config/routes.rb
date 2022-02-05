@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root "users#index"
+  devise_for :users,
+    controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+    }
+  # root "users#index"
   delete 'comment/:id', to: 'comments#destroy', as: 'destroy_comment'
   resources :users do
     resources :posts
