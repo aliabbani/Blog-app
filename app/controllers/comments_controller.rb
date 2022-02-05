@@ -38,4 +38,4 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:text)
   end
 end
-# redirect_to user_post_path(@post.author.id, @post.id)
+
