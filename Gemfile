@@ -78,3 +78,4 @@ gem 'cancancan'
 
 # jwt
 gem 'devise-jwt'
+gem 'rack-cors'
