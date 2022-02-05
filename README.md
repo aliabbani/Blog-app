@@ -48,9 +48,54 @@ rails generate rspec:install
 ```javascript
 rspec spec
 ```
+### API
+All API endpoints receives JSON and responds in a JSON format as well.
+
+Has API endpoint that returns all comments for a post - GET : /users/:user_id/posts/:id/comments
+`curl -XGET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjQ0MDc5NzQzLCJleHAiOjE2NDQwODMzNDMsImp0aSI6ImRlNjFjMzUzLTY4NDAtNDczZC04YjIzLTZmYWJiNTBhOTdhOCJ9.1gpx3E_QnXpDL8_Mx_JDHimAfaXI1-Gti0aOMrZWoQ0" -H "Content-Type: application/json" http://localhost:3000/posts/1/comments
+`
+Has API endpoint that returns all comments for a post - GET : /users/:user_id/posts/:id/comments:
+before to get the token you need to login
+
+`
+curl -XGET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI3Iiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNjQ0MDc5NzQzLCJleHAiOjE2NDQwODMzNDMsImp0aSI6ImRlNjFjMzUzLTY4NDAtNDczZC04YjIzLTZmYWJiNTBhOTdhOCJ9.1gpx3E_QnXpDL8_Mx_JDHimAfaXI1-Gti0aOMrZWoQ0" -H "Content-Type: application/json" http://localhost:3000/users/1/posts/1/comments
+
+`
+
+Has API endpoint that adds' a comment to a post - POST : /users/:user_id/posts/:id/comments
+
+Has API endpoint for authentication, both registration and login
+
+Login endpoint - GET : /sign_in email=xxxxxx password=hhhhhuhuhhugvrrr
+
+` http http://127.0.0.1:3000/users/sign_in email=talmud@gmail.com password=123456789
+`
+
+Registration endpoint - POST : /users name="xxx" password="your password" email="your email"
+
+I.E: with the httpie program:
+
+
+`
+curl -XPOST -i -H "Content-Type: application/json" -d '{ "user": { "email": "test@example.com", "password": "12345678" } }' http://localhost:3000/users/sign_in 
+`
+
+or
+
+`
+ http POST http://127.0.0.1:3000/users name=tatata email=tatata@gmail.com password=123456789 password_confirmation=123456789
+`
+
 ## Author
 
 👤 **Ali Abbani**
+
+## Ali's Profile
+
+- [GitHub](https://github.com/aliabbani)
+- [AngelList](https://angel.co/u/ali-abbani)
+- [LinkedIn](https://www.linkedin.com/in/ali-abbani-8b6246150/)
+  👤 **Ali Abbani**
 
 ## Ali's Profile
 
