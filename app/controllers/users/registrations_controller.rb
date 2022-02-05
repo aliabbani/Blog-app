@@ -20,8 +20,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     )
   end
 
-  private
-
   def respond_with(resource, _opts = {})
     register_success && return if resource.persisted?
 
